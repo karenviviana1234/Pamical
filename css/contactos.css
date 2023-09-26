@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+label{
+    color: white;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    text-align: center;
+}
+.box{
+    display: flex;
+    justify-content: space-evenly;
+}
+.nombre-propietario, .telefono, .correo{
+    margin: 0 14vh;
+    justify-content: center;
+    justify-items: center;
+    font-size: 1.3em;
+    display: flex;
+    font-family:  'PT Sans';
+}
+.nombre-propietario{
+    font-size: 1em;
+}
+.telefono{
+    font-size: 1.3em;
+    font-weight: 700;
+    color: white;
+}
+.logo1, .logo{
+    padding: 50px;
+    height: 200px;
+    width: 80%;
+}
+.main-nav {
+    text-align: center;
+    background-color: #50BF3F;
+   }
+   .primero-style{
+       display: inline-block;
+       line-height: 50px;
+       list-style: none;
+       color: white;
+   }
+   .primero-style:hover{
+       background-color: #0b0e0b;
+   }
+   .main-menu a {
+       font-family:  'PT Sans';
+       text-align: center;
+       text-decoration: none;
+       color: white;
+       font-size: 2.5em;
+   }
+   /* pt-sans-700italic - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'PT Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: url('../fonts/pt-sans-v17-latin-700italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }

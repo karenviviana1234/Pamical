@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: rgb(38, 27, 27); */
+}
+header {
+    height: 95px;
+}
+.page-box-slider {
+    width: 100%;
+    overflow-x: hidden;
+}
+.box-slider {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* mantiene el tamaño del contenido, Een este caso la imagen */
+    height: calc(135vh - 95px);
+    position: relative;
+    z-index: 10;
+    transition: all 1s;
+}
+.box-slider-1 {
+    left: 0;
+}
+.box-slider-2 {
+    left: -100%;
+}
+.box-slider-3 {
+    left: -220%;
+}
+.box-slider-4 {
+    left: -320%;
+}
+.box-slider-5 {
+    left: -430%;
+}
+.icon-chevron-left, .icon-chevron-right {
+    color: rgb(0, 0, 0);
+    font-size: 2.5em;
+    position: relative;
+    top: calc((-100vh) + 350px);
+    z-index: 20;
+    padding: 0 50px;
+}
+
+.icon-chevron-right {
+    display: flex;
+    justify-content: flex-end;
+    top: calc((-100vh) + 295px);
+    left: calc((+100vh) + 640px);
+}
+.icon-chevron-right, .icon-chevron-left {
+    cursor: pointer;
+}
+.box-signal {
+    width: 700px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 20px;
+}
+.signal {
+    width: 120px;
+    height: 20px;
+    background-color: red;
+    padding: 0 25px;
+}
+.box-box-signal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+    z-index: 150;
+}
