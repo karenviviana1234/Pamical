@@ -1,76 +1,285 @@
-*{
+* {
     margin: 0;
-    padding: 0;
+    border: 0;
     box-sizing: border-box;
-    /* background-color: rgb(38, 27, 27); */
 }
-header {
-    height: 95px;
+/* Menu */
+.bar-menu { /* La hamburguesa */
+    cursor: pointer; /* Coloca la manito al estar cerca de la hamburguesa */
+    position: absolute; 
+    
+    color: white; /* Le damos un color a la hamburguesa */
+    font-size: 2.2em; /* Le damos tamaño a la hamburguesa */
+    top: 25px; /* Posicion arriba */
+    right: 30px; /*posicion de la derecha */
+    visibility: hidden; /* hace que la caja del elemento sea invisible, no se muestra pero sigue ocupando sitio */
 }
-.page-box-slider {
-    width: 100%;
-    overflow-x: hidden;
+.main-menu { /* el menu principal */
+    height: 120px; /* alto del contenedor */
+    list-style: none; /* Quita el estilo de la lista "ul" */  
+    text-align: center; /* establecer la alineación horizontal de un bloque de texto */
+    background-color: #50BF3F; /* le damos color al contenedor main menu */
+    /* height: 120px; / / */
+    border-radius: 10px;
 }
-.box-slider {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap; /* mantiene el tamaño del contenido, Een este caso la imagen */
-    height: calc(135vh - 95px);
-    position: relative;
-    z-index: 10;
-    transition: all 1s;
+.item-menu { /* el texto del menu */
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none; /* quita el enlace del texto */
+    font-size: 1.5em; /* Tamaño de la letra */   
+    padding: 50px 50px; /* el espacio entre el texto */
 }
-.box-slider-1 {
-    left: 0;
+.item-main-menu {
+    height: 100%; /* el 100 por ciento de la negrita */
+    display: inline-block;
 }
-.box-slider-2 {
-    left: -100%;
-}
-.box-slider-3 {
-    left: -220%;
-}
-.box-slider-4 {
-    left: -320%;
-}
-.box-slider-5 {
-    left: -430%;
-}
-.icon-chevron-left, .icon-chevron-right {
-    color: rgb(0, 0, 0);
-    font-size: 2.5em;
-    position: relative;
-    top: calc((-100vh) + 350px);
-    z-index: 20;
-    padding: 0 50px;
+.item-main-menu:hover { /* */ 
+    cursor: pointer;
+    background-color: #0b0e0b;  
 }
 
-.icon-chevron-right {
+
+@media only screen and (max-width:1152px) { /* Dice cuando aparece el menu hamburgesa */
+
+    .main-menu {
+        margin-top: 1px;
+        display: none;
+
+    }
+    .main-menu-visible { /* / / */
+        display: block;
+        background-color: rgb(96, 96, 96, .9); /* El color del menu desplegable */
+        margin-top: 40px; /* La distancia entre el menu hamburgesa y el menu */
+        margin-left: -200px;
+        z-index: 3; /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
+        position: relative; /* Hace funcionar el z-index */
+       
+        
+    }
+    .item-main-menu{ /* Arreglar, aparece un cosito negro de mas */
+
+        display: inline-block; /* dispaly:block */
+        /* line-height: 70px; / / Centra un poco el menu */
+        text-align: center; /* Centra el contenido */
+        border-bottom: 1px solid white; /* Le da un borde al menu en la parte inferior */
+        height: 100%;
+        width: 100%;
+    }
+    .item-main-menu:hover{ /* Arreglar, aparece un cosito negro de mas */
+        background-color: rgba(71, 68, 68, 0.9);
+        display: inline-block;
+    }
+    .bar-menu {
+        visibility: visible;
+        z-index: 3; /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
+        position: relative; /* Hace funcionar el z-index */
+    }
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+
+.logo {
     display: flex;
-    justify-content: flex-end;
-    top: calc((-100vh) + 295px);
-    left: calc((+100vh) + 640px);
+    border-radius: 10px; /* le da un borde al logo */
+    grid-area: logo; 
+    background-color: #FE3E00; /* le coloca un color al div logo */
+    height: 120px; /* altura del logo */
+    width: 180px; /* ancho del logo */
+    background-image: url(../img/logo_300x185.jpg); /* una imagen en el div logo */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    z-index: 1; /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
+    position: relative; /* Hace funcionar el z-index */
 }
-.icon-chevron-right, .icon-chevron-left {
-    cursor: pointer;
+.main-menu1 {
+    grid-area: main-menu1;
 }
-.box-signal {
-    width: 700px;
+header {
+    margin-top: 20px; /* el espacio entre la parte superior y el header */
+    width: 100%; /* el alto del header que va a ocupar */
+    height: 130px; /* espacio entre el header con la imagen pricncipal */
+    gap: 50px;
+    display: grid;
+    grid-template: "logo main-menu1 " /
+        150px minmax(150px, 1fr);
+}
+.main-page { /* El div padre */
+    grid-area: main-page;
+}
+
+body {
+    background-color: #718395; /* color de fondo */
+    width: 100%; /* ancho */
+    height: 100vh; /* alto */
+    display: grid;
+    grid-template: "empty-left main-page empty-right" /
+        minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
+
+}
+span { /* Para la letra de los contenedores */
+    font-size: 1.2em; /* tamaño */
+    line-height: 1.5; /* establecer la distancia entre líneas de texto */
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 20px;
+text-align: left;
+    font-family: 'Times New Roman', Times, serif; /* letra */
+    color: wheat;
+    
 }
-.signal {
-    width: 120px;
-    height: 20px;
-    background-color: red;
-    padding: 0 25px;
+
+body {
+	background-color: black; /* color de fondo */
+    width: 100%; /* ancho */
+    height: 100vh; /* alto */
+    display: grid;
+    grid-template: "empty-left main-page empty-right" /
+        minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
+
 }
-.box-box-signal {
-    width: 100%;
+
+.main-content { /* Padre de la imagen principal y contenedores */
+    gap: 30px; /* el espacio entre contenedores */
+    margin-bottom: 50px; /* espacio entre la parte inferior con el contenido */
+    margin-top: 10px; /* espacio entre el header la imagen principal */
+    display: grid;
+    grid-template:  "article-1 article-2 article-3"
+                    "article-4 article-5 article-6"
+        "text-article-1 text-article-2 text-article-3"
+        "text-article-4 text-article-5 text-article-6";
+
+
+
+}
+/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
+/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
+
+/* imagenes y texto */
+.article {
+    border-radius: 10px;
+    height: 350px;
+    grid-area: article-1;
+    background-color: rgba(65, 31, 31, 0.7);
+}
+
+.style-img {
     display: flex;
+    margin-top: 110px;
+    height: 350px;
     justify-content: center;
-    position: relative;
-    top: -50px;
-    z-index: 150;
+    font-size: 1.6em;
+    color: white;
+}
+
+.article-1 {
+
+    border-radius: 10px;
+    grid-area: article-1;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+
+.article-2 {
+    border-radius: 10px;
+    grid-area: article-2;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+
+.article-3 {
+    border-radius: 10px;
+    grid-area: article-3;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+.article-4 {
+    border-radius: 10px;
+    grid-area: article-4;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+.article-5 {
+    border-radius: 10px;
+    grid-area: article-5;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+.article-6 {
+    border-radius: 10px;
+    grid-area: article-6;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../im);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+
+.text-article-1 {
+    margin-top: 10px;
+    grid-area: text-article-1;
+}
+
+.text-article-2 {
+    margin-top: 10px;
+    grid-area: text-article-2;
+}
+
+.text-article-3 {
+    margin-top: 10px;
+    grid-area: text-article-3;
+}
+.text-article-4 {
+    margin-top: 10px;
+    grid-area: text-article-4;
+}
+.text-article-5 {
+    margin-top: 10px;
+    grid-area: text-article-5;
+}
+.text-article-6 {
+    margin-top: 10px;
+    grid-area: text-article-6;
+}
+
+.img-article {
+    width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .box {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template:
+            "article-1 " 
+            "text-article-1 " 
+            "article-2" 
+            "text-article-2 " 
+            "article-3" 
+            "text-article-3" 
+            "article-4 "
+            "text-article-4 "
+            "article-5 "
+            "text-article-5 "
+            "article-6 "
+            "text-article-6 "/100%;
+    }
+
 }

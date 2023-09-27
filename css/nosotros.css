@@ -1,7 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-}
 * {
     margin: 0;
     border: 0;
@@ -23,12 +19,12 @@
     list-style: none; /* Quita el estilo de la lista "ul" */  
     text-align: center; /* establecer la alineación horizontal de un bloque de texto */
     background-color: #50BF3F; /* le damos color al contenedor main menu */
-    /* height: 120px; */ /* */
+    /* height: 120px; / / */
     border-radius: 10px;
 }
 .item-menu { /* el texto del menu */
     display: block;
-	color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none; /* quita el enlace del texto */
     font-size: 1.5em; /* Tamaño de la letra */   
     padding: 50px 50px; /* el espacio entre el texto */
@@ -39,7 +35,7 @@
 }
 .item-main-menu:hover { /* */ 
     cursor: pointer;
-	background-color: #0b0e0b; 
+    background-color: rgba(0, 0, 0, 0.9);  
 }
 
 
@@ -50,7 +46,7 @@
         display: none;
 
     }
-    .main-menu-visible { /* */ /* */
+    .main-menu-visible { /* / / */
         display: block;
         background-color: rgb(96, 96, 96, .9); /* El color del menu desplegable */
         margin-top: 40px; /* La distancia entre el menu hamburgesa y el menu */
@@ -61,9 +57,8 @@
         
     }
     .item-main-menu{ /* Arreglar, aparece un cosito negro de mas */
-
         display: inline-block; /* dispaly:block */
-        /* line-height: 70px; */ /* Centra un poco el menu */
+        /* line-height: 70px; / / Centra un poco el menu */
         text-align: center; /* Centra el contenido */
         border-bottom: 1px solid white; /* Le da un borde al menu en la parte inferior */
         height: 100%;
@@ -80,8 +75,6 @@
     }
 }
 
-
-
 /* ////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////// */
 
@@ -89,23 +82,14 @@
     display: flex;
     border-radius: 10px; /* le da un borde al logo */
     grid-area: logo; 
-    background-color: #50BF3F; /* le coloca un color al div logo */
     height: 120px; /* altura del logo */
-    width: 180px; /* ancho del logo */
-    background-image: url(../img/logo_300x185.jpg); /* una imagen en el div logo */
+    width: 150px; /* ancho del logo */
+    background-image: url(../img/img_principal_pamical_500x500.png); /* una imagen en el div logo */
     background-repeat: no-repeat; /* para que no se repita la imagen */
     background-position: center; /* centra la imagen en el contendor div */
     background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
     z-index: 1; /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
     position: relative; /* Hace funcionar el z-index */
-}
-.style-titulo { /* estilo del pamical */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.8em;
-    color: white;
-    padding: 0;
 }
 .main-menu1 {
     grid-area: main-menu1;
@@ -116,11 +100,30 @@ header {
     height: 130px; /* espacio entre el header con la imagen pricncipal */
     gap: 50px;
     display: grid;
-    grid-template: "logo main-menu " /
+    grid-template: "logo main-menu1 " /
         150px minmax(150px, 1fr);
 }
 .main-page { /* El div padre */
     grid-area: main-page;
+}
+
+body {
+    background-color: #718395; /* color de fondo */
+    width: 100%; /* ancho */
+    height: 100vh; /* alto */
+    display: grid;
+    grid-template: "empty-left main-page empty-right" /
+        minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
+
+}
+span { /* Para la letra de los contenedores */
+    font-size: 1em; /* tamaño */
+    line-height: 1.5; /* establecer la distancia entre líneas de texto */
+    display: flex;
+text-align: left;
+    font-family: 'Times New Roman', Times, serif; /* letra */
+    color: wheat;
+    
 }
 
 body {
@@ -132,32 +135,115 @@ body {
         minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
 
 }
-/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
-/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
-.box{
-    display: flex;
-    justify-content: space-evenly;
+
+.main-content { /* Padre de la imagen principal y contenedores */
+    gap: 30px; /* el espacio entre contenedores */
+    margin-bottom: 50px; /* espacio entre la parte inferior con el contenido */
+    margin-top: 10px; /* espacio entre el header la imagen principal */
+    display: grid;
+    grid-template:  "article-1 article-2 article-3 article-4"
+        "text-article-1 text-article-2 text-article-3 text-article-4";
+
+
+
 }
-.nombre-programador, .correo, .telefono{
-    margin: 0 14px;
+/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
+/* 7777777777777777777777777777777777777777777777777777777777777777777777777777777777777 */
+
+/* imagenes y texto */
+.article {
+    border-radius: 10px;
+    height: 350px;
+    grid-area: article-1;
+    background-color: rgba(65, 31, 31, 0.7);
+}
+
+.article-1 {
+    border-radius: 10px;
+    grid-area: article-1;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../img/Daniela.jpg);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+
+.style-img {
+    display: flex;
+    margin-top: 110px;
+    height: 350px;
     justify-content: center;
-    justify-items: center;
+    font-size: 1.6em;
     color: white;
-    font-size: 1.3em;
-    display: flex;
-    font-family: 'PT Sans';
 }
-.nombre-programador{
-    font-size: 1em;
+
+.article-2 {
+    border-radius: 10px;
+    grid-area: article-2;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../img/karen2.jpg);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
 }
-.correo, .telefono{
-    font-size: 1em;
-    color: white;
-    font-family: 'PT Sans';
+
+.article-3 {
+    border-radius: 10px;
+    grid-area: article-3;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../img/sharit2.jpg);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
 }
-.foto{
-    margin: 0 10px;
-    height: 400px;
-    width: 280px;
-    padding: 30px 10px;
+.article-4 {
+    border-radius: 10px;
+    grid-area: article-4;
+    background-color: rgb(64, 64, 64, .7);
+    background-image: url(../img/juan.jpg);
+    background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
+    background-repeat: no-repeat; /* para que no se repita la imagen */
+    background-position: center; /* centra la imagen en el contendor div */
+}
+
+.text-article-1 {
+    margin-top: 10px;
+    grid-area: text-article-1;
+}
+
+.text-article-2 {
+    margin-top: 10px;
+    grid-area: text-article-2;
+}
+
+.text-article-3 {
+    margin-top: 10px;
+    grid-area: text-article-3;
+}
+.text-article-4 {
+    margin-top: 10px;
+    grid-area: text-article-4;
+}
+.img-article {
+    width: 100%;
+}
+@media only screen and (max-width: 600px) {
+    .box {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template:
+            "article-1 " 
+            "text-article-1 " 
+            "article-2" 
+            "text-article-2 " 
+            "article-3" 
+            "text-article-3" 
+            "article-4 "
+            "text-article-4 "/100%;
+    }
+
 }
