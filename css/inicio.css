@@ -87,8 +87,8 @@
     grid-area: logo; 
     background-color: #50BF3F; /* le coloca un color al div logo */
     height: 120px; /* altura del logo */
-    width: 180px; /* ancho del logo */
-    background-image: url(../img/logo_300x185.jpg); /* una imagen en el div logo */
+    width: 15  0px; /* ancho del logo */
+    background-image: url(../img/img_principal_pamical_500x500.png); /* una imagen en el div logo */
     background-repeat: no-repeat; /* para que no se repita la imagen */
     background-position: center; /* centra la imagen en el contendor div */
     background-size: cover; /* la imagen se ajusta para cubrir completamente el div */
