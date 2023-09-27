@@ -9,8 +9,9 @@
     justify-content: center;
     align-items: center;
     font-family:  'PT Sans';
-   
+    background-color: #4ecd3b;
  }
+
  .container {
     scroll-behavior: smooth;
     width: 1000px;
@@ -107,7 +108,7 @@
  h1 {
     font-family:  'PT Sans';
     text-align: center;
-    color: black;
+    color: white;
     font-size: 3em;
  }
 /* pt-sans-700italic - latin */
