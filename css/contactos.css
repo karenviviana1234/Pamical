@@ -1,130 +1,4 @@
-* {
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-}
-
-/* Menu */
-.bar-menu {
-    /* La hamburguesa */
-    cursor: pointer;
-    /* Coloca la manito al estar cerca de la hamburguesa */
-    position: absolute;
-
-    color: white;
-    /* Le damos un color a la hamburguesa */
-    font-size: 2.2em;
-    /* Le damos tamaño a la hamburguesa */
-    top: 25px;
-    /* Posicion arriba */
-    right: 30px;
-    /*posicion de la derecha */
-    visibility: hidden;
-    /* hace que la caja del elemento sea invisible, no se muestra pero sigue ocupando sitio */
-}
-
-.main-menu {
-    /* el menu principal */
-    height: 120px;
-    /* alto del contenedor */
-    list-style: none;
-    /* Quita el estilo de la lista "ul" */
-    text-align: center;
-    /* establecer la alineación horizontal de un bloque de texto */
-    background-color: #50BF3F;
-    /* le damos color al contenedor main menu */
-    /* height: 120px; */
-    /* */
-    border-radius: 10px;
-}
-
-.item-menu {
-    /* el texto del menu */
-    display: block;
-    color: white;
-    text-decoration: none;
-    /* quita el enlace del texto */
-    font-size: 1em;
-    /* Tamaño de la letra */
-}
-
-.item-main-menu {
-    height: 100%;
-    /* el 100 por ciento de la negrita */
-    display: inline-block;
-}
-
-.item-main-menu:hover {
-    /* */
-    cursor: pointer;
-    background-color: #0b0e0b;
-}
-
-
-@media only screen and (max-width:1152px) {
-    /* Dice cuando aparece el menu hamburgesa */
-
-    .main-menu {
-        margin-top: 1px;
-        display: none;
-
-    }
-
-    .main-menu-visible {
-        /* */
-        /* */
-        display: block;
-        background-color: rgb(96, 96, 96, .9);
-        /* El color del menu desplegable */
-        margin-top: 40px;
-        /* La distancia entre el menu hamburgesa y el menu */
-        margin-left: -200px;
-        z-index: 3;
-        /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
-        position: relative;
-        /* Hace funcionar el z-index */
-
-
-    }
-
-    .item-main-menu {
-        /* Arreglar, aparece un cosito negro de mas */
-
-        display: inline-block;
-        /* dispaly:block */
-        /* line-height: 70px; */
-        /* Centra un poco el menu */
-        text-align: center;
-        /* Centra el contenido */
-        border-bottom: 1px solid white;
-        /* Le da un borde al menu en la parte inferior */
-        height: 100%;
-        width: 100%;
-    }
-
-    .item-main-menu:hover {
-        /* Arreglar, aparece un cosito negro de mas */
-        background-color: rgba(71, 68, 68, 0.9);
-        display: inline-block;
-    }
-
-    .bar-menu {
-        visibility: visible;
-        z-index: 3;
-        /* Sirve para definir por encima de quien va, a mayor el nuemro va encima de los menores */
-        position: relative;
-        /* Hace funcionar el z-index */
-    }
-}
-
-
-
-/* ////////////////////////////////////////////////////////////////////////////// */
-/* ////////////////////////////////////////////////////////////////////////////// */
-
-
-
-* {
+ * {
     margin: 0;
     border: 0;
     box-sizing: border-box;
@@ -300,8 +174,8 @@ body {
     /* centra la imagen en el contendor div */
     display: grid;
     font-family: 'PT Sans';
-    grid-template: "empty-left main-page empty-right" /
-        minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
+    grid-template: "empty-left        main-page             empty-right" /
+                    minmax(50px, 1fr) minmax(200px, 1500px) minmax(50px, 1fr);
 
 }
 
@@ -312,7 +186,7 @@ label {
     line-height: 0.8;
     /* establecer la distancia entre líneas de texto */
     display: flex;
-text-align: left;
+    text-align: left;
     /* para centrar el texto */
     font-family: 'Times New Roman', Times, serif;
     color: white;
@@ -350,8 +224,6 @@ header {
     grid-area: main-page;
 }
 
-
-
 span {
     /* Para la letra de los contenedores */
     font-size: 1em;
@@ -365,52 +237,35 @@ span {
     /* letra */
 }
 
-
 .box {
     display: flex;
     justify-content: space-evenly;
 }
 
-.nombre-propietario,
-.telefono,
-.correo {
-    margin: 0 14vh;
-    justify-content: center;
-    justify-items: center;
-    font-size: 1em;
-    display: flex;
-    font-family: 'PT Sans';
-}
-
-
 .logo1 {
-    height: 200px;
+    height: 150px;
     width: 80%;
+    margin-bottom: 25px;
 }
 .logo2{
-    height: 250px;
+    height: 150px;
     width: 80%;
+    margin-bottom: 25px;
 }
 .logo3{
-    height: 350px;
+    height: 250px;
     width: 80%;
+    margin-bottom: 25px;
 }
-.main-nav {
-    text-align: center;
-    background-color: #50BF3F;
-}
-
 .primero-style {
     display: inline-block;
     line-height: 50px;
     list-style: none;
     color: white;
 }
-
 .primero-style:hover {
     background-color: #0b0e0b;
 }
-
 .main-menu a {
     font-family: 'PT Sans';
     text-align: center;
