@@ -20,7 +20,7 @@
    height: 120px; /* alto del contenedor */
    list-style: none; /* Quita el estilo de la lista "ul" */  
    text-align: center; /* establecer la alineación horizontal de un bloque de texto */
-   background-color: #50BF3F; /* le damos color al contenedor main menu */
+   background-color: black; /* le damos color al contenedor main menu */
    /* height: 120px; */ /* */
    border-radius: 10px;
 }
@@ -37,7 +37,7 @@
 }
 .item-main-menu:hover { /* */ 
    cursor: pointer;
-  background-color: #0b0e0b; 
+  background-color: #41a133; 
 }
 
 
@@ -85,9 +85,7 @@
 
 .logo {
    display: flex;
-   border-radius: 10px; /* le da un borde al logo */
    grid-area: logo; 
-   background-color: #50BF3F; /* le coloca un color al div logo */
    height: 120px; /* altura del logo */
    width: 15  0px; /* ancho del logo */
    background-image: url(../img/img_principal_pamical_500x500.png); /* una imagen en el div logo */
